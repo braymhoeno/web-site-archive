@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>华体会 · 轻量导航介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9fcfb;
+            color: #1e2b3c;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            padding: 0 24px;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-bottom: 1px solid #dbe9e3;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 0.02em;
+            color: #1d7c6b;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #2b4c44;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .navbar-links a:hover {
+            color: #0f6e5d;
+            border-bottom-color: #3aa58a;
+        }
+
+        /* hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 60px 0 48px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            color: #102b26;
+            max-width: 720px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #38544b;
+            max-width: 640px;
+            margin-top: 8px;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #d2f0e8;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #146454;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .dot-accent {
+            color: #2b9b83;
+        }
+
+        /* 网格卡片区域 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            padding: 28px 0 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 22px 32px;
+            box-shadow: 0 4px 16px rgba(0, 40, 30, 0.04);
+            border: 1px solid #dcebe6;
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(43, 155, 131, 0.08);
+            border-color: #b5ddd2;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+            background: #e1f3ee;
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1b7b68;
+            font-weight: 400;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 14px 0 8px;
+            color: #173b34;
+        }
+
+        .card p {
+            color: #3b5b53;
+            font-size: 0.95rem;
+        }
+
+        .card .card-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: #1a816d;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dashed #9ac8bc;
+            padding-bottom: 2px;
+        }
+
+        .card .card-link:hover {
+            color: #0d5f4f;
+            border-bottom-style: solid;
+        }
+
+        .scene-tag {
+            background: #eaf6f2;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #196e5d;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* FAQ 摘要 */
+        .faq-section {
+            padding: 28px 0 48px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #14342d;
+            margin-bottom: 28px;
+            border-left: 6px solid #3aa58a;
+            padding-left: 18px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #ffffffd6;
+            backdrop-filter: blur(2px);
+            padding: 20px 18px;
+            border-radius: 20px;
+            border: 1px solid #d1e7df;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1b5146;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            color: #386057;
+            font-size: 0.9rem;
+        }
+
+        .footnote {
+            padding: 24px 0 40px;
+            text-align: center;
+            border-top: 1px solid #d1e3dc;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #40665c;
+        }
+
+        .footnote a {
+            color: #187b67;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #98cdbe;
+        }
+
+        .footnote a:hover {
+            border-bottom-color: #1c6b5a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .navbar-links {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 22px 16px 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <span class="navbar-brand">hth · 轻行</span>
+        <div class="navbar-links">
+            <a href="#intro">介绍</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero + 核心介绍 -->
+    <header class="hero" id="intro">
+        <span class="tagline">✦ 日常中的质感节点</span>
+        <h1>华体会 · 一种贴近生活的<span class="dot-accent">主题视野</span></h1>
+        <p>从运动、休闲到社交驻足，<a href="https://web-site-hth.com.cn" style="color: #187b67; font-weight: 600; text-decoration: none; border-bottom: 1px solid #6fc4b0;">华体会</a>所带来的并非单一标签，而是融于日常的场景组合。轻巧、明快、有温度——这正是我们希望传递的节奏。</p>
+    </header>
+
+    <!-- 三个场景模块（网格卡片，三个） -->
+    <section id="scenes">
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>活力 · 运动角落</h3>
+                <p>三五好友，一场球局，或是晨间的慢跑路线。<a href="https://web-site-hth.com.cn" style="color: #187b67; font-weight: 500; text-decoration: none;">华体会</a>所关联的许多互动，往往从一次随性的运动邀约开始。</p>
+                <span class="scene-tag">户外 · 轻竞技</span>
+            </div>
+            <div class="card">
+                <div class="card-icon">☕</div>
+                <h3>社交 · 聚合片刻</h3>
+                <p>不只是线上的连接，更是线下面对面的温度。无论是社区活动还是兴趣小组，<a href="https://web-site-hth.com.cn" style="color: #187b67; font-weight: 500; text-decoration: none;">华体会</a>背后常有这些柔软交集。</p>
+                <span class="scene-tag">相遇 · 交流</span>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>日常 · 平衡节奏</h3>
+                <p>在快与慢之间找到属于自己的频率。华体会所代表的主题既包含专注的片刻，也留有余地——一杯茶、一段阅读，都是好风景。</p>
+                <span class="scene-tag">自洽 · 生活感</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <section class="faq-section" id="faq">
+        <h2>常见说明</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <strong>华体会具体指什么？</strong>
+                <p>它并非一个固化的概念，更像一个集合——将运动、休闲、社交等轻场景融合起来的主题称呼。根据不同情境，侧重点自然不同。</p>
+            </div>
+            <div class="faq-item">
+                <strong>适用于哪些人群？</strong>
+                <p>适合希望保持生活开放性、喜欢轻度活动与真实社交的群体。没有严格年龄或圈层限制，只要对这类场景有共鸣即可。</p>
+            </div>
+            <div class="faq-item">
+                <strong>如何了解更多？</strong>
+                <p>你可以直接访问 <a href="https://web-site-hth.com.cn" style="color: #187b67; font-weight: 500; text-decoration: none; border-bottom: 1px solid #88cfbe;">华体会</a> 页面，那里有更完整的介绍与内容。我们也会持续更新场景和想法。</p>
+            </div>
+            <div class="faq-item">
+                <strong>是否与线上社区相关？</strong>
+                <p>线上是其中一个切面，但更多还是鼓励回到真实的体验里。华体会所倡导的，是线上与线下自然衔接的轻生活方式。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部一句话 + 链接 -->
+    <footer class="footnote">
+        <p>发现属于你的节奏 · <a href="https://web-site-hth.com.cn">华体会</a> 提供一份生活参考</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">轻量导航 · 自然融入日常</p>
+    </footer>
+
+</div>
+</body>
+</html>

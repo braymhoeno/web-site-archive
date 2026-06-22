@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷火电竞 · 知识型参考页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fd;
+      color: #1b2d3b;
+      line-height: 1.6;
+      padding: 0 1.2rem;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2.4rem 0 3.6rem;
+    }
+
+    /* —— hero —— */
+    .hero {
+      background: linear-gradient(145deg, #0a262f 0%, #124a50 100%);
+      border-radius: 2.4rem;
+      padding: 3.2rem 2rem;
+      margin-bottom: 3.2rem;
+      color: #e2f0f0;
+      box-shadow: 0 12px 28px rgba(8, 48, 56, 0.25);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 680px;
+      color: #c2e3e5;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero .brand-em {
+      display: inline-block;
+      background: rgba(30, 200, 180, 0.18);
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #b6f0e6;
+    }
+
+    /* —— 网格卡片区 —— */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      margin: 2.8rem 0;
+    }
+
+    @media (min-width: 700px) {
+      .grid-2col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 6px 16px rgba(0, 40, 50, 0.06);
+      border: 1px solid #d8eaed;
+      transition: transform 0.15s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(8, 68, 78, 0.10);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h3::before {
+      content: "▹";
+      color: #148a84;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .card p {
+      color: #2f414b;
+      margin-bottom: 0.6rem;
+    }
+
+    .accent-border {
+      border-left: 5px solid #1b9b94;
+      padding-left: 1.2rem;
+    }
+
+    /* —— 说明区 —— */
+    .info-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 2.4rem 2rem;
+      margin: 2.6rem 0;
+      border: 1px solid #bfdfe2;
+    }
+
+    .info-section h2 {
+      font-weight: 450;
+      font-size: 1.8rem;
+      color: #0e3f47;
+      margin-bottom: 1.2rem;
+    }
+
+    .info-section p {
+      margin-bottom: 1.2rem;
+    }
+
+    .info-section a {
+      color: #147a78;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .info-section a:hover {
+      color: #0f5d5a;
+    }
+
+    .faq-block {
+      background: #e4f2f4;
+      border-radius: 1.6rem;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .faq-block summary {
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.3rem 0;
+      cursor: pointer;
+      color: #144b4d;
+    }
+
+    .faq-block details {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-block details p {
+      margin: 0.6rem 0 0.2rem 1.2rem;
+      color: #1f3d43;
+    }
+
+    /* —— 底部 —— */
+    .footer-links {
+      border-top: 1px solid #c5dbdf;
+      padding-top: 2.2rem;
+      margin-top: 2.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .footer-links small {
+      color: #4a6b72;
+    }
+
+    .footer-links a {
+      color: #115c5b;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #9ac7c5;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px solid #0a4b4a;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid #148a84;
+      border-radius: 60px;
+      padding: 0.5rem 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #148a84;
+      transition: 0.2s;
+      text-decoration: none;
+      margin-top: 0.4rem;
+    }
+
+    .btn-outline:hover {
+      background: #148a84;
+      color: white;
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 2.4rem 1.2rem;
+      }
+      .card {
+        padding: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 区 -->
+  <section class="hero">
+    <h1>日常查询 · 对照与延伸</h1>
+    <p>
+      围绕 <span class="brand-em">雷火电竞</span> 的信息梳理，提供一种结构化的参考视角。<br>
+      从常见问题、场景对照到延伸阅读，方便浏览时快速定位。
+    </p>
+    <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+      <span class="btn-outline" style="border-color:#b1ded9; color:#d1f2ed;">主题：蓝绿·网格</span>
+      <span class="btn-outline" style="border-color:#b1ded9; color:#d1f2ed;">方向：知识型</span>
+    </div>
+  </section>
+
+  <!-- 优势区 / 特点卡片 网格 -->
+  <div class="grid-2col">
+    <div class="card">
+      <h3>对照结构</h3>
+      <p>将信息拆成“查询要点”和“常见对照”，减少重复翻阅。每个卡片专注单一维度，便于横向对比。</p>
+    </div>
+    <div class="card">
+      <h3>场景延伸</h3>
+      <p>从日常使用场景出发：规则查询、术语对照、版本记录、常见疑问。不堆砌概念，侧重可读性。</p>
+    </div>
+    <div class="card">
+      <h3>索引式摘要</h3>
+      <p>FAQ 部分以折叠形式呈现，只显示标题，展开后可见简短说明。适合快速扫读与跳转。</p>
+    </div>
+    <div class="card">
+      <h3>移动适应</h3>
+      <p>卡片、间距、字号均适配窄屏；hero 区背景渐变保留辨识度，按钮和链接触控友好。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：日常查询与对照 -->
+  <section class="info-section">
+    <h2>日常查询与对照</h2>
+    <p>
+      当需要快速了解或核对某个细节时，按维度查阅比全文搜索更高效。本页将内容组织为“优势特点”“说明延伸”“FAQ 摘要”三个模块，每个模块聚焦一组相关问题。
+    </p>
+    <p>
+      例如在了解平台机制时，可对照卡片中的结构说明；遇到不熟悉的表述，可以通过 FAQ 摘要快速定位解释。延伸阅读部分则提供语境参考。
+    </p>
+    <p>
+      如果需要进一步查看具体信息，可以前往 <a href="https://webs-tfgaming.com">雷火电竞</a> 浏览更完整的资料与动态。
+    </p>
+
+    <!-- 额外提示块 -->
+    <div style="background: #d9eef0; border-radius: 1.4rem; padding: 1.4rem 1.6rem; margin-top: 1.8rem;">
+      <p style="margin-bottom:0;"><strong>提示：</strong> 日常使用时建议先阅读 FAQ 摘要，再根据对照卡片查找细节。本页面仅提供结构化的介绍框架，所有信息均基于公开可查的内容整理。</p>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要区（折叠） -->
+  <div class="faq-block">
+    <h3 style="font-weight:450; margin-bottom:1rem; color:#134d4f;">FAQ 摘要</h3>
+    <details>
+      <summary>什么是「雷火电竞」？</summary>
+      <p>这是一个综合性电竞信息与服务平台，提供赛事数据、玩法说明及社群交流功能。平台持续更新内容，覆盖多种主流项目。</p>
+    </details>
+    <details>
+      <summary>页面中「对照卡片」指什么？</summary>
+      <p>指将零散信息按维度（如特点、场景、索引）分成独立卡片，用户可根据需要横向比较，减少来回翻找。</p>
+    </details>
+    <details>
+      <summary>延伸阅读包含哪些方向？</summary>
+      <p>延伸部分会涉及术语解释、版本对照、常见误区等。具体内容会随平台更新而调整，建议定期浏览最新信息。</p>
+    </details>
+    <details>
+      <summary>移动端浏览体验如何？</summary>
+      <p>页面采用响应式设计，卡片自动变为单列，字体和点击区域均针对小屏优化，hero 背景与按钮保留视觉层次。</p>
+    </details>
+  </div>
+
+  <!-- 底部链接区 -->
+  <footer class="footer-links">
+    <div>
+      <a href="https://webs-tfgaming.com">雷火电竞</a>
+      <span style="margin:0 0.6rem; color:#7ea8ae;">·</span>
+      <a href="#" style="text-decoration:none; border-bottom:1px dotted #9ac7c5;">结构说明</a>
+    </div>
+    <small>蓝绿点缀 · 网格卡片 · 知识型陈述</small>
+  </footer>
+
+</div>
+</body>
+</html>
